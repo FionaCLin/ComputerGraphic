@@ -21,8 +21,9 @@ public class TestMyCoolGameObject {
 		
 		//Should look good when we create your MyCoolGameObject using the default constructor
 		//By default we test on a black background
-		//Write a comment to your tutor in your MyCoolGameObject file if your object does not look ok on a 
-                //black background and it looks better with a white or a red backgroud
+		//Write a comment to your tutor in your MyCoolGameObject file 
+		//if your object does not look ok on a 
+        //black background and it looks better with a white or a red backgroud
 		//Write instructions in your comments if you have mouse interaction
 		
 		MyCoolGameObject cgo = new MyCoolGameObject(); //Won't compile until you have written this class
@@ -30,11 +31,11 @@ public class TestMyCoolGameObject {
 		// Should not break if we apply transformations for example
 		// If we uncommented these lines (or wrote other transformations) 
 		// it should not break your object
-		/**
-		cgo.translate(-0.2,0.2);
-		cgo.rotate(45);
-		cgo.scale(0.25);
-		**/    
+		
+//		cgo.translate(-0.2,0.2);
+//		cgo.rotate(45);
+//		cgo.scale(0.5);
+		    
 	}
    
     /**
@@ -59,7 +60,7 @@ public class TestMyCoolGameObject {
         GameEngine engine = new GameEngine(camera);
         panel.addGLEventListener(engine);
 
-	// Add a mouse event handler        
+		// Add a mouse event handler        
         panel.addMouseListener(Mouse.theMouse);
         panel.addMouseMotionListener(Mouse.theMouse); 
 

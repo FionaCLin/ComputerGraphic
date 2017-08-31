@@ -1,10 +1,10 @@
-package assignment1_COMPUTER_GRAPHIC_comp3421.tests;
+package ass1.tests;
 
 import junit.framework.TestCase;
 
 import org.junit.Test;
 
-import assignment1_COMPUTER_GRAPHIC_comp3421.MathUtil;
+import ass1.MathUtil;
 
 /**
  * COMMENT: Comment MathUtilTest 

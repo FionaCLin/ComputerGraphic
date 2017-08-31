@@ -1,9 +1,8 @@
-package assignment1_COMPUTER_GRAPHIC_comp3421.tests;
+package ass1.tests;
 
 import org.junit.Test;
 
-import assignment1_COMPUTER_GRAPHIC_comp3421.GameObject;
-
+import ass1.GameObject;
 import junit.framework.TestCase;
 
 /**

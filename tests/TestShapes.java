@@ -1,4 +1,4 @@
-package assignment1_COMPUTER_GRAPHIC_comp3421.tests;
+package ass1.tests;
 
 
 import java.util.Arrays;
@@ -10,7 +10,7 @@ import com.jogamp.opengl.GLProfile;
 import com.jogamp.opengl.awt.GLJPanel;
 import com.jogamp.opengl.util.FPSAnimator;
 
-import assignment1_COMPUTER_GRAPHIC_comp3421.*;
+import ass1.*;
 
 /**
  * A simple test class for assignment1

@@ -1,4 +1,4 @@
-package assignment1_COMPUTER_GRAPHIC_comp3421;
+package ass1;
 
 import java.util.List;
 
@@ -122,18 +122,6 @@ public class CircularGameObject extends GameObject {
 	}
 
 	public void drawCircle(GL2 gl) {
-		// gl.glScaled(radius, radius, 1);
-		// gl.glBegin(GL2.GL_POLYGON);
-		//
-		// for (int i = 0; i < NPOINTS; i++) {
-		// double a = i * Math.PI * 2 / NPOINTS;
-		//
-		// double x = Math.cos(a);
-		// double y = Math.sin(a) + 1; // off centre
-		// gl.glVertex2d(x, y);
-		// }
-		//
-		// gl.glEnd();
 		gl.glBegin(GL2.GL_POLYGON);
 		gl.glVertex2d(center[1], center[1]); // The centre of the circle
 		for (int d = 0; d <= 32; d++) {

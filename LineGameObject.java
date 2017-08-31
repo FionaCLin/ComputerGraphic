@@ -1,4 +1,4 @@
-package assignment1_COMPUTER_GRAPHIC_comp3421;
+package ass1;
 
 import java.util.LinkedList;
 import java.util.List;

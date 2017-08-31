@@ -1,4 +1,4 @@
-package assignment1_COMPUTER_GRAPHIC_comp3421;
+package ass1;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseWheelEvent;

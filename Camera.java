@@ -1,4 +1,4 @@
-package assignment1_COMPUTER_GRAPHIC_comp3421;
+package ass1;
 
 import com.jogamp.opengl.GL;
 import com.jogamp.opengl.GL2;
@@ -48,9 +48,14 @@ public class Camera extends GameObject {
 
 		// TODO 2. set the view matrix to account for the camera's position
 
-		gl.glScaled(1 / getScale(), 1 / getScale(), 1);
-		gl.glRotated(-getRotation(), 0, 0, 1);
-		gl.glTranslated(-getPosition()[0], -getPosition()[1], 0);
+		gl.glMatrixMode(GL2.GL_MODELVIEW);
+		gl.glLoadIdentity();
+		
+		
+		
+		gl.glScaled(1 / this.getGlobalScale(), 1 / this.getGlobalScale(), 1);
+		gl.glRotated(-this.getGlobalRotation(), 0, 0, 1);
+		gl.glTranslated(-this.getGlobalPosition()[0], -this.getGlobalPosition()[1], 0);
 
 	}
 

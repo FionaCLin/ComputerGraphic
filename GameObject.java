@@ -1,12 +1,12 @@
-package assignment1_COMPUTER_GRAPHIC_comp3421;
+package ass1;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.jogamp.opengl.GL2;
 
-import assignment1_COMPUTER_GRAPHIC_comp3421.GameObject;
-import assignment1_COMPUTER_GRAPHIC_comp3421.MathUtil;
+import ass1.GameObject;
+import ass1.MathUtil;
 
 /**
  * A GameObject is an object that can move around in the game world.
@@ -272,14 +272,14 @@ public class GameObject {
 		}
 
 		gl.glMatrixMode(GL2.GL_MODELVIEW);
-		gl.glLoadIdentity();
+		
 		gl.glPushMatrix();
 
 		// TODO: setting the model transform appropriately
 
-		gl.glTranslated(getGlobalPosition()[0], getGlobalPosition()[1], 0);
-		gl.glRotated(this.getGlobalRotation(), 0, 0, 1);
-		gl.glScaled(this.getGlobalScale(), this.getGlobalScale(), 1);
+		gl.glTranslated(myTranslation[0], myTranslation[1], 0);
+		gl.glRotated(myRotation, 0, 0, 1);
+		gl.glScaled(myScale, myScale, 1);
 		drawSelf(gl);
 		// draw the object (Call drawSelf() to draw the object itself)
 		// and all its children recursively
@@ -392,23 +392,24 @@ public class GameObject {
 	 * @param parent
 	 */
 	public void setParent(GameObject parent) {
+
 		double[][] curr_global = getCurrTran();
 		double globalRotation = getGlobalRotation();
-
-		myParent.myChildren.remove(this);
+		double[][] curr_inver_mx = curr_global;
 		myParent = parent;
-		myParent.myChildren.add(this);
-		
-		double[][] curr_inver_mx = myParent.getCurrInverTran(curr_global);
 
+		if (parent != null) {
+			myParent.myChildren.remove(this);
+			myParent.myChildren.add(this);
+			curr_inver_mx = myParent.getCurrInverTran(curr_global);
+			setRotation(globalRotation - myParent.getGlobalRotation());
+		}
 		double[] p = new double[2];
 		p[0] = Math.pow(curr_inver_mx[0][0], 2);
 		p[1] = Math.pow(curr_inver_mx[0][1], 2);
 		setScale(Math.sqrt((p[0] + p[1])));
-
-		setRotation(globalRotation - myParent.getGlobalRotation());
-
 		this.setPosition(curr_inver_mx[0][2], curr_inver_mx[1][2]);
+
 	}
 
 }
